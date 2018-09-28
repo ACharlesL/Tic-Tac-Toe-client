@@ -1,11 +1,11 @@
 #!/bin/bash
 
-curl "https://tic-tac-toe-wdi.herokuapp.com/sign-up" \
+curl "https://tic-tac-toe-wdi.herokuapp.com/games[?over=]" \
 --include \
 --request POST \
 --header "Content-Type: application/json" \
 --data '{
-  "credentials": {
+  "game": {
     "email": "'"${EMAIL}"'",
     "password": "'"${PASSWORD}"'",
     "password_confirmation": "'"${PASSWORD}"'"

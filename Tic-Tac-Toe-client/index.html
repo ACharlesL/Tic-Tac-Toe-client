@@ -2,6 +2,7 @@
 <html>
     <head>
       <title>Example</title>
+      <h1>Charles Tic tac toe</h1>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -14,19 +15,25 @@
     <body>
 
 
-    <div>
+      <div class="container" id="gameBoard">
+        <div class="row">
+          <div class="col-sm-2 box purple">1</div>
+          <div class="col-sm-2 box darkblue">2</div>
+          <div class="col-sm-2 box darkblue">3</div>
+          </div>
+        <div class="row">
+          <div class="col-sm-2 box darkblue">4</div>
+          <div class="col-sm-2 box darkblue">5</div>
+          <div class="col-sm-2 box darkblue">6</div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2 box darkblue">7</div>
+          <div class="col-sm-2 box darkblue">8</div>
+          <div class="col-sm-2 box darkblue">9</div>
+        </div>
+      </div>
 
-
-    </div>
-
-
-
-
-
-
-
-
-      <h1>Browser Template</h1>
+      <div class="container">
       <h3 id="display-message"></h3>
 
       <form id="sign-up-form">
@@ -44,6 +51,5 @@
         <input type="submit" />
       </form>
       <button id="sign-out-button" class='hidden'> Sign out </button>
-
-    </body>
+      </div>
 </html>

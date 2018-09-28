@@ -14,7 +14,7 @@ const signInSuccess = function (response) {
   $('#display-message').html('Sign in successful')
   $('#display-message').css('color', 'green')
   $('#sign-in-form').trigger('reset')
-  console.log('store before adding user key', store)
+  // console.log('store before adding user key', store)
   store.user = response.user
   console.log('store after adding user key', store)
   console.log('store.user.token', store.user.token)
@@ -41,11 +41,15 @@ const signOutFailure = function () {
   $('#display-message').css('color', 'red')
   $('#sign-in-form').trigger('reset')
 }
+const createGamesuccess = function (response) {
+  console.log(response)
+}
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
   signInFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  createGamesuccess
 }
