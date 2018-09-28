@@ -1,6 +1,6 @@
 'use strict'
 
-// const store = require('../store.js')
+const store = require('../store.js')
 
 // const signUpSuccess = function () {
 //   $('#display-message').html('Sign up successful')
@@ -44,6 +44,7 @@
 const gameCreateSuccess = function (response) {
   console.log('success creating game')
   console.log(response)
+  store.game = response
   // const gameObjectForHTML = response
   // const gameObjectForHTML = (`
   //         cells: ${gameObjectForHTML.cells[0]}</h4>
@@ -69,6 +70,9 @@ const gameXmove = function (data) {
   console.log(data)
   // get content to the page:
   console.log(data.game.id)
+  console.log(data.game.player_x.id)
+  console.log(data.game.cells)
+//  console.log(data.game.cells[moveData.target.id])
   // {
   // "game": {
   //   "id": 3,

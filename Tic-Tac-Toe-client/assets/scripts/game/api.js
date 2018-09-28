@@ -47,12 +47,38 @@ const onCreateGame = function () {
   })
 }
 const changeValue = function () {
+  console.log('game id ' + store.game.game.id)
+  console.log('change value in ' + store.event.target.id)
+  const changeLocation = store.event.target.id
+  const gameId = store.game.game.id
+  const OVER = false
+  const X = 'x'
+  const currentGame = {
+    'game': {
+      'cell': {
+        'index': changeLocation,
+        'value': X
+      },
+      'over': OVER
+    }
+  }
   return $.ajax({
-    url: config.apiUrl + '/games',
+    url: config.apiUrl + `games/${gameId}`,
     headers: {
       Authorization: `Token token=${store.user.token}`
     },
-    method: 'POST'
+    method: 'PATCH',
+    data: currentGame
+  //   data: {
+  //     'game': {
+  //       'cell': {
+  //         'index': 6,
+  //         'value': 'x'
+  //       },
+  //       'over': false
+  //     }
+  // }
+
   })
 }
 // const onCreateGame = function () {
@@ -77,5 +103,6 @@ const changeValue = function () {
 //   })
 // }
 module.exports = {
-  onCreateGame
+  onCreateGame,
+  changeValue
 }

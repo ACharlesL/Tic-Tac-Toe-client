@@ -1,15 +1,7 @@
-# sh curl-scripts/json/sign-in.sh
+#!/bin/bash
 
-curl "https://tic-tac-toe-wdi.herokuapp.com/sign-in" \
---include \
---request POST \
---header "Content-Type: application/json" \
---data '{
-  "credentials": {
-    "email": "'"${EMAIL}"'",
-    "password": "'"${PASSWORD}"'"
-    }
-  }'
+curl --include --request GET "https://tic-tac-toe-wdi.herokuapp.com/games/${ID}"
+--header "Authorization: Token token=${TOKEN}"
 
 
 echo

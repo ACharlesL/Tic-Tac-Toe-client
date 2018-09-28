@@ -3,7 +3,7 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields')
-
+const store = require('../store.js')
 
 // const onSignUp = function (event) {
 //   console.log('in sign up event')
@@ -27,9 +27,10 @@ const onNewGame = function (event) {
 
 const makingMoves = function (event) {
   event.preventDefault()
+  store.event = event
   const moveData = getFormFields(event.target)
-
-  api.onCreateGame(moveData)
+  console.log('in making move ' + event.target.id)
+  api.changeValue(moveData)
     .then(ui.gameXmove)
     .catch(ui.gameXmovefail)
 }
