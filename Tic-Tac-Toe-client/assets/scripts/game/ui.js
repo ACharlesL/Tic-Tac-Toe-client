@@ -1,6 +1,6 @@
 'use strict'
 
-const store = require('../store.js')
+// const store = require('../store.js')
 
 // const signUpSuccess = function () {
 //   $('#display-message').html('Sign up successful')
@@ -44,6 +44,15 @@ const store = require('../store.js')
 const gameCreateSuccess = function (response) {
   console.log('success creating game')
   console.log(response)
+  // const gameObjectForHTML = response
+  // const gameObjectForHTML = (`
+  //         cells: ${gameObjectForHTML.cells[0]}</h4>
+  //         <p>Author: ${book.author}</p>
+  //         <p>ID: ${book.id}</p>
+  //         <br />
+  //       `)
+  //   $('#content').append(bookHTML)
+
   // $('#sign-up-form').addClass('hidden')
   // $('#sign-in-form').addClass('hidden')
   // $('#Change-password-form').addClass('hidden')
@@ -54,7 +63,42 @@ const gameCreatefailure = function () {
   $('#display-message').css('color', 'red')
   $('#sign-in-form').trigger('reset')
 }
+const gameXmove = function (data) {
+//  $(data).html('X')
+  console.log('Asysnc: inside .then')
+  console.log(data)
+  // get content to the page:
+  console.log(data.game.id)
+  // {
+  // "game": {
+  //   "id": 3,
+  //   "cells": ["","","","","","","","",""],
+  //   "over": false,
+  //   "player_x": {
+  //     "id": 1,
+  //     "email": "and@and.com"
+  //   },
+  //   "player_o": null
+  // }
+  // }
+  // empty content element
+//  $('#content').html('')
+  // // loop through API response date
+  // const book = response.book
+  //  const gameHTML = (`
+  //           .0: ${book.title}</h4>
+  // //       <p>Author: ${book.author}</p>
+  // //       <p>ID: ${book.id}</p>
+  //       $('#sign-in-form').trigger('reset')
+  // //     `)
+  // // $('#content').append(bookHT
+}
+const gameXmovefail = function () {
+  console.log('game x move failed in event')
+}
 module.exports = {
   gameCreateSuccess,
-  gameCreatefailure
+  gameCreatefailure,
+  gameXmove,
+  gameXmovefail
 }

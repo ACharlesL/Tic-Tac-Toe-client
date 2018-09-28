@@ -2,6 +2,8 @@
 
 const api = require('./api.js')
 const ui = require('./ui.js')
+const getFormFields = require('../../../lib/get-form-fields')
+
 
 // const onSignUp = function (event) {
 //   console.log('in sign up event')
@@ -22,6 +24,15 @@ const onNewGame = function (event) {
     .then(ui.gameCreateSuccess)
     .catch(ui.gameCreatefailure)
 }
+
+const makingMoves = function (event) {
+  event.preventDefault()
+  const moveData = getFormFields(event.target)
+
+  api.onCreateGame(moveData)
+    .then(ui.gameXmove)
+    .catch(ui.gameXmovefail)
+}
 // const onSignOut = function (event) {
 //   // alert('it works')
 //   event.preventDefault()
@@ -32,5 +43,6 @@ const onNewGame = function (event) {
 // }
 
 module.exports = {
-  onNewGame
+  onNewGame,
+  makingMoves
 }

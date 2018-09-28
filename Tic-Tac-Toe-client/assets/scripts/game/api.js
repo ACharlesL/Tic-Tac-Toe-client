@@ -46,6 +46,15 @@ const onCreateGame = function () {
     method: 'POST'
   })
 }
+const changeValue = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    method: 'POST'
+  })
+}
 // const onCreateGame = function () {
 //   return $.ajax({
 //     url: config.apiUrl + '/games',
