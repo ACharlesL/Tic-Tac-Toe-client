@@ -24,16 +24,27 @@ const onNewGame = function (event) {
     .then(ui.gameCreateSuccess)
     .catch(ui.gameCreatefailure)
 }
-
+const avialableSpot = []
 const makingMoves = function (event) {
-  event.preventDefault()
-  store.event = event
-  const moveData = getFormFields(event.target)
-  console.log('in making move ' + event.target.id)
-  api.changeValue(moveData)
-    .then(ui.gameXmove)
-    .catch(ui.gameXmovefail)
+  if (!avialableSpot.includes(event.target.id)) {
+    event.preventDefault()
+    store.event = event
+    console.log(store.event)
+    const moveData = getFormFields(event.target)
+    console.log('in making move ' + event.target.id)
+    avialableSpot.push(event.target.id)
+    console.log(avialableSpot)
+    api.changeValue(moveData)
+      .then(ui.gameXmove)
+      .catch(ui.gameXmovefail)
+  } else {
+    ui.gameXmovefail()
+  }
 }
+// const avialable = function () {
+//   console.log('in avialable')
+//   avialableSpot.includes(event.target.id)
+// }
 // const onSignOut = function (event) {
 //   // alert('it works')
 //   event.preventDefault()

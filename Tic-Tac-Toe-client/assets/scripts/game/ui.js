@@ -66,6 +66,8 @@ const gameCreatefailure = function () {
 }
 const gameXmove = function (data) {
 //  $(data).html('X')
+  $('#display-message').html('player made a move')
+  $('#display-message').css('color', 'yellow')
   console.log('Asysnc: inside .then')
   console.log(data)
   // get content to the page:
@@ -98,6 +100,8 @@ const gameXmove = function (data) {
   // // $('#content').append(bookHT
 }
 const gameXmovefail = function () {
+  $('#display-message').html('Wrong move!')
+  $('#display-message').css('color', 'red')
   console.log('game x move failed in event')
 }
 module.exports = {
