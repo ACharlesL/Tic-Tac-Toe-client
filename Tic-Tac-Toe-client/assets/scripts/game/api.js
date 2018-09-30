@@ -11,38 +11,9 @@ const onCreateGame = function () {
     method: 'POST'
   })
 }
-let eventCounter = 0
 
-const changeValue = function () {
-  // even/odd counter
-  eventCounter++
-  // game over logic
-  if (eventCounter === 9) {
-    store.game.game.over = true
-  }
-  const changeLocation = store.event.target.id
-  console.log('game id ' + store.game.game.id)
-  console.log('change value in ' + store.event.target.id)
+const changeValue = function (currentGame) {
   const gameId = store.game.game.id
-  const OVER = store.game.game.over
-  const X = 'X'
-  const O = 'O'
-  let value
-  console.log('event tracker ' + eventCounter)
-  if (eventCounter % 2 === 0) {
-    value = O
-  } else {
-    value = X
-  }
-  const currentGame = {
-    'game': {
-      'cell': {
-        'index': changeLocation,
-        'value': value
-      },
-      'over': OVER
-    }
-  }
   return $.ajax({
     url: config.apiUrl + `games/${gameId}`,
     headers: {
