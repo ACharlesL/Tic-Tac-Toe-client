@@ -29,6 +29,10 @@ const gameXmovefail = function () {
   $('#display-message').css('color', 'red')
   console.log('game x move failed in event')
 }
+const gameOver = function () {
+  $('#display-message').html('GAME OVER!')
+  $('#display-message').css('color', 'green')
+}
 const updateboard = function (data) {
   console.log('in updateboard UI' + data.game.cells)
   $('#0').html(data.game.cells[0])
@@ -46,5 +50,6 @@ module.exports = {
   gameCreatefailure,
   gameXmove,
   gameXmovefail,
-  updateboard
+  updateboard,
+  gameOver
 }

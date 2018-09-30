@@ -2,9 +2,7 @@
 const config = require('../config.js')
 const store = require('../store.js')
 
-const emptyPositionTracker = []
-
-const onCreateGame = function() {
+const onCreateGame = function () {
   return $.ajax({
     url: config.apiUrl + '/games',
     headers: {
@@ -14,14 +12,19 @@ const onCreateGame = function() {
   })
 }
 let eventCounter = 0
+
 const changeValue = function () {
   // even/odd counter
   eventCounter++
+  // game over logic
+  if (eventCounter === 9) {
+    store.game.game.over = true
+  }
   const changeLocation = store.event.target.id
   console.log('game id ' + store.game.game.id)
   console.log('change value in ' + store.event.target.id)
   const gameId = store.game.game.id
-  const OVER = false
+  const OVER = store.game.game.over
   const X = 'X'
   const O = 'O'
   let value

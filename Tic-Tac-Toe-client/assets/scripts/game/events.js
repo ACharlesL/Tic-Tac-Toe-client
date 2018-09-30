@@ -5,6 +5,8 @@ const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields')
 const store = require('../store.js')
 
+const avialableSpot = []
+
 // const onSignUp = function (event) {
 //   console.log('in sign up event')
 //   event.preventDefault()
@@ -24,7 +26,15 @@ const onNewGame = function (event) {
     .then(ui.gameCreateSuccess)
     .catch(ui.gameCreatefailure)
 }
-const avialableSpot = []
+// not sure this funciton is usefull.
+const gameStatus = function (event) {
+  if (avialableSpot.length < 10 && avialableSpot.length === 9) {
+  //  store.game.game.over = true
+  //  console.log('GAME OVER')
+  } else if (avialableSpot.length < 10) {
+    makingMoves(event)
+  }
+}
 const makingMoves = function (event) {
   if (!avialableSpot.includes(event.target.id)) {
     event.preventDefault()
@@ -41,6 +51,7 @@ const makingMoves = function (event) {
     ui.gameXmovefail()
   }
 }
+
 // const avialable = function () {
 //   console.log('in avialable')
 //   avialableSpot.includes(event.target.id)
@@ -56,5 +67,6 @@ const makingMoves = function (event) {
 
 module.exports = {
   onNewGame,
-  makingMoves
+  makingMoves,
+  gameStatus
 }
