@@ -22,6 +22,9 @@ const signInSuccess = function (response) {
   $('#sign-in-form').addClass('hidden')
   $('#Change-password-form').addClass('hidden')
   // $('#sign-out-button').addClass('hidden')
+  $('#new-game-button').addClass('unhide')
+  $('#sign-out-button').addClass('unhide')
+  // $('.gameBoard').addClass('hidden')
 }
 const signInFailure = function () {
   $('#display-message').html('Something went wrong, please try again')

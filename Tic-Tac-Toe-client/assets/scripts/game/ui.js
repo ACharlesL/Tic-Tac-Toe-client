@@ -5,6 +5,7 @@ const gameEvents = require('./events.js')
 
 const gameCreateSuccess = function (response) {
   console.log('success creating game')
+  $('#gameBoard').addClass('unhide')
   console.log(response)
   store.game = response
 }
@@ -32,6 +33,7 @@ const gameXmovefail = function () {
   console.log('game x move failed in event')
 }
 const gameOver = function () {
+  $('#gameBoard').addClass('hidden')
   $('#display-message').html('GAME OVER!')
   $('#display-message').css('color', 'green')
 }
@@ -64,7 +66,7 @@ const checkWin = function (data) {
   const diag2 = [game[6], game[4], game[2]]
 
   if (row1[0] === 'X' && row1[1] === 'X' && row1[2] === 'X') {
-    winX()
+// winX(a, b, c)
   } else if (row2[0] === 'X' && row2[1] === 'X' && row2[2] === 'X') {
     winX()
   } else if (row3[0] === 'X' && row3[1] === 'X' && row3[2] === 'X') {
@@ -97,18 +99,24 @@ const checkWin = function (data) {
     draw()
   }
 }
-const winX = function () {
+const winX = function (response) {
+  $('#display-message').html('X WIN! Please start a new game')
   $('#display-message').html('X WIN! Please start a new game')
   $('#display-message').css('color', 'green')
   console.log('Player X WIN')
+  gameOver()
+  $('#gameBoard').addClass('hidden')
+
 //  freshboard()
+}
+const winAnimation = function (a, b, c) {
+
 }
 const winO = function () {
   $('#display-message').html('O WIN! Please start a new game')
   $('#display-message').css('color', 'green')
   console.log('Player O WIN')
-  console.log('Player X WIN')
-  console.log('Please start a new game')
+  gameOver()
 //  freshboard()
 }
 const draw = function () {
