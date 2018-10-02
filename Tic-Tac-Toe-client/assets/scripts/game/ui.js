@@ -8,6 +8,7 @@ const gameCreateSuccess = function (response) {
   $('#gameBoard').addClass('unhide')
   $('#gameBoard').addClass('clickable')
   $('#display-message').html('game on')
+  $('#display-message').css('color', 'green')
   $('#player-logged-on').html(`${store.user.email}`)
 //  $('#display-message').addClass('hidden')
 //  $('#gameBoard').show()
