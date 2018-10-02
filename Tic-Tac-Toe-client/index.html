@@ -2,7 +2,7 @@
 <html>
     <head>
       <title>Example</title>
-      <h1>Charles Tic tac toe</h1>
+      <h2> Tic tac toe </h2>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -15,30 +15,30 @@
     <body>
 
 
-      <div class="container hidden" id="gameBoard" >
+      <div class="container hidden " id="gameBoard" >
         <div class="row">
-          <div id="0" class="col-sm-2 box purple"> </div>
-          <div id="1" class="col-sm-2 box purple"> </div>
-          <div id="2" class="col-sm-2 box purple"> </div>
+          <div id="0" class="col-sm-2 box gray"> </div>
+          <div id="1" class="col-sm-2 box gray"> </div>
+          <div id="2" class="col-sm-2 box gray"> </div>
           </div>
         <div class="row">
-          <div id="3" class="col-sm-2 box purple"> </div>
-          <div id="4" class="col-sm-2 box purple"> </div>
-          <div id="5" class="col-sm-2 box purple"> </div>
+          <div id="3" class="col-sm-2 box gray"> </div>
+          <div id="4" class="col-sm-2 box gray"> </div>
+          <div id="5" class="col-sm-2 box gray"> </div>
         </div>
         <div class="row">
-          <div id="6" class="col-sm-2 box purple"> </div>
-          <div id="7" class="col-sm-2 box purple"> </div>
-          <div id="8" class="col-sm-2 box purple"> </div>
+          <div id="6" class="col-sm-2 box gray"> </div>
+          <div id="7" class="col-sm-2 box gray"> </div>
+          <div id="8" class="col-sm-2 box gray"> </div>
         </div>
       </div>
       <div id="content"></div>
 
       <div class="container">
-      <h3 id="display-message"></h3>
+      <h5 id="display-message"></h5>
 
       <form id="sign-up-form">
-        <legend> Sign Up! </legend>
+        <legend> sign up </legend>
         <input required placeholder="Enter Email" name="credentials[email]" type="email"/>
         <input required placeholder="Enter Password" name="credentials[password]" type="password"/>
         <input required placeholder="Confirm Password" name="credentials[password_confirmation]" type="password"/>
@@ -46,15 +46,46 @@
       </form>
 
       <form id="sign-in-form">
-        <legend> Sign in! </legend>
+        <legend> log in </legend>
         <input required placeholder="Enter Email" name="credentials[email]" type="email"/>
         <input required placeholder="Enter Password" name="credentials[password]" type="password"/>
         <input type="submit" />
       </form>
-      <button id="sign-out-button" class="hidden"> Sign out </button>
+
+      <form id="Change-password-form" class='hidden'>
+        <legend> Change Password </legend>
+        <input required placeholder="Old Password" name="passwords[old]" type="password"/>
+        <input required placeholder="New Password" name="passwords[new]" type="password"/>
+        <input type="submit" />
+      </form>
+
       </div>
       <div class="container">
       <button id="new-game-button" class="hidden"> New Game </button>
+      <button id="sign-out-button" class="hidden"> log out </button>
+      <button id="view-games-button" class="hidden">stats</button>
+      <h4 id="Stats-message"> </h4>
+</div>
+      <div class="container">
       </div>
+      <div class="container" id="gameHistory" > </div>
+
+       <!-- <div class="container" id="gameHistoryboard" >
+        <div class="row">
+          <div id="p0" class="col-sm-2 box purple"> </div>
+          <div id="p1" class="col-sm-2 box purple"> </div>
+          <div id="p2" class="col-sm-2 box purple"> </div>
+          </div>
+        <div class="row">
+          <div id="p3" class="col-sm-2 box purple"> </div>
+          <div id="p4" class="col-sm-2 box purple"> </div>
+          <div id="p5" class="col-sm-2 box purple"> </div>
+        </div>
+        <div class="row">
+          <div id="p6" class="col-sm-2 box purple"> </div>
+          <div id="p7" class="col-sm-2 box purple"> </div>
+          <div id="p8" class="col-sm-2 box purple"> </div>
+        </div>
+      </div> -->
 </body>
 </html>

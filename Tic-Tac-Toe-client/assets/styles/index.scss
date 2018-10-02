@@ -11,9 +11,19 @@ $lightBlue: #65DEF1;
 $darkblue: #141891;
 $gold: #FFD700;
 $purple: #800080;
+$kesselrun1: #58c3dc;
+$gray: #6c757d;
 
 .hidden {
   visibility: hidden;
+}
+
+.unclickable {
+  pointer-events: none;
+}
+
+.clickable {
+  pointer-events: auto;
 }
 
 .unhide {
@@ -29,15 +39,16 @@ $purple: #800080;
     background-color: inherit;
     font-family: inherit;
     margin: 0;
+
 }
 
 body {
-  background-color: $background-color;
+  background-color: $kesselrun1;
 }
 
 .box {
   align-items: center;
-  border: 5px solid $gold;
+  border: 5px solid gray;
   color: $font-color;
   display: flex;
   height: 80px;

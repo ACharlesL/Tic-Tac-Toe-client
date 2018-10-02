@@ -24,10 +24,13 @@ const signInSuccess = function (response) {
   // $('#sign-out-button').addClass('hidden')
   $('#new-game-button').addClass('unhide')
   $('#sign-out-button').addClass('unhide')
+  $('#view-games-button').addClass('unhide')
+  $('#Change-password-form').addClass('unhide')
+
   // $('.gameBoard').addClass('hidden')
 }
 const signInFailure = function () {
-  $('#display-message').html('Something went wrong, please try again')
+  $('#display-message').htm('Something went wrong, please try again')
   $('#display-message').css('color', 'red')
   $('#sign-in-form').trigger('reset')
 }
@@ -36,8 +39,13 @@ const signOutSuccess = function () {
   $('#display-message').css('color', 'green')
   $('#sign-up-form').removeClass('hidden')
   $('#sign-in-form').removeClass('hidden')
-  $('#change-password-form').addClass('hidden')
+  $('#Change-password-form').addClass('hidden')
   $('#sign-out-button').addClass('hidden')
+  $('#gameBoard').hide()
+  $('#new-game-button').hide()
+  $('#sign-out-button').hide()
+  $('#view-games-button').hide()
+  $('#Change-password-form').hide()
 }
 const signOutFailure = function () {
   $('#display-message').html('Something went wrong, please try again')
@@ -47,6 +55,17 @@ const signOutFailure = function () {
 const createGamesuccess = function (response) {
   console.log(response)
 }
+const userGames = function (response) {
+  console.log('in UI games')
+  store.games = response
+  console.log(response)
+}
+
+const changePasswordSuccess = function (response) {
+  console.log('new password success')
+  // store.user = response.user
+  $('#Change-password-form').addClass('hidden')
+}
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -54,5 +73,7 @@ module.exports = {
   signInFailure,
   signOutSuccess,
   signOutFailure,
-  createGamesuccess
+  createGamesuccess,
+  userGames,
+  changePasswordSuccess
 }
