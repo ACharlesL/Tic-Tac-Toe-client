@@ -183,7 +183,7 @@ const draw = function () {
 }
 const gameOver = function (winner) {
   $('#display-message').addClass('unhide')
-  $('#display-message').html(`${winner}AF Please start a new game`)
+  $('#display-message').html(`${winner} Please start a new game`)
 //  $('#display-message').html('GAME OVER!')
   $('#display-message').css('color', 'green')
   $('#gameBoard').addClass('unclickable')
