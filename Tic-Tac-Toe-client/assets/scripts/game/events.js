@@ -53,11 +53,11 @@ const onNewGame = function(event) {
 //   }
 // }
 
-const gamelogic = function(event) {
+const gamelogic = function (event) {
   console.log('in game logic ' + store.game.game.over)
   console.log('in game logic ' + unavialableSpot)
-  if (!unavialableSpot.includes(event.target.id)) {
-    if (store.game.game.over === false) {
+  if (store.game.game.over === false) {
+    if (!unavialableSpot.includes(event.target.id)) {
       // even/odd counter
       eventCounter++
       // game over logi
@@ -101,10 +101,10 @@ const gamelogic = function(event) {
         .then(ui.gameXmove)
         .catch(ui.gameXmovefail)
     } else {
-      ui.gameXmovefail()
+      ui.wrongMove()
     }
   } else {
-    ui.wrongMove()
+    ui.gameXmovefail()
   }
 }
 const makingMoves = function(event) {

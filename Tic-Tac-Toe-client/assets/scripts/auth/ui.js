@@ -46,6 +46,8 @@ const signOutSuccess = function () {
   $('#sign-out-button').hide()
   $('#view-games-button').hide()
   $('#Change-password-form').hide()
+  $('#player-logged-on').hide()
+
 }
 const signOutFailure = function () {
   $('#display-message').html('Something went wrong, please try again')
