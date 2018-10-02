@@ -21,23 +21,23 @@ const unavialableSpot = []
 
 // capture signIn event to create game board
 
-const onGetGames = function(event) {
+const onGetGames = function (event) {
   event.preventDefault()
-  console.log('in get games')
+  // console.log('in get games')
   api.getGames()
     .then(ui.userGames)
     .catch(ui.userGamesFail)
 }
 
 // new game event
-const onNewGame = function(event) {
+const onNewGame = function (event) {
   // alert('it works')
   ui.freshboard()
   eventCounter = 0
   while (unavialableSpot.length > 0) {
     unavialableSpot.pop()
   }
-  console.log('in game new board')
+  //  console.log('in game new board')
   event.preventDefault()
   api.onCreateGame()
     .then(ui.gameCreateSuccess)
@@ -54,8 +54,8 @@ const onNewGame = function(event) {
 // }
 
 const gamelogic = function (event) {
-  console.log('in game logic ' + store.game.game.over)
-  console.log('in game logic ' + unavialableSpot)
+//  console.log('in game logic ' + store.game.game.over)
+//  console.log('in game logic ' + unavialableSpot)
   if (store.game.game.over === false) {
     if (!unavialableSpot.includes(event.target.id)) {
       // even/odd counter
@@ -63,8 +63,8 @@ const gamelogic = function (event) {
       // game over logi
 
       const changeLocation = event.target.id
-      console.log('game id ' + store.game.game.id)
-      console.log('change value in ' + event.target.id)
+      //  console.log('game id ' + store.game.game.id)
+      //  console.log('change value in ' + event.target.id)
       //  const gameId = store.game.game.id
       // game over or not
       const OVER = store.game.game.over
@@ -74,7 +74,7 @@ const gamelogic = function (event) {
       // if (eventCounter === 0) {
       //   value = X
       // }
-      console.log('event tracker ' + eventCounter)
+      // console.log('event tracker ' + eventCounter)
       if (eventCounter % 2 === 0) {
         if (eventCounter === 0) {
           value = X
@@ -96,7 +96,7 @@ const gamelogic = function (event) {
         ui.freshboard()
       }
       unavialableSpot.push(event.target.id)
-      console.log('unavialable spot' + unavialableSpot)
+      // console.log('unavialable spot' + unavialableSpot)
       api.changeValue(currentGame)
         .then(ui.gameXmove)
         .catch(ui.gameXmovefail)
@@ -111,11 +111,11 @@ const makingMoves = function(event) {
   if (!unavialableSpot.includes(event.target.id)) {
     event.preventDefault()
     store.event = event
-    console.log(store.event)
+    // console.log(store.event)
     const moveData = getFormFields(event.target)
-    console.log('in making move ' + event.target.id)
+    // console.log('in making move ' + event.target.id)
     unavialableSpot.push(event.target.id)
-    console.log(unavialableSpot)
+    // console.log(unavialableSpot)
     api.changeValue(moveData)
       .then(ui.gameXmove)
       .catch(ui.gameXmovefail)

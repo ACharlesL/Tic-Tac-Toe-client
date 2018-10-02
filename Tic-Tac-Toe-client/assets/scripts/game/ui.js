@@ -4,7 +4,7 @@ const store = require('../store.js')
 const gameEvents = require('./events.js')
 
 const gameCreateSuccess = function (response) {
-  console.log('success creating game')
+  // console.log('success creating game')
   $('#gameBoard').addClass('unhide')
   $('#gameBoard').addClass('clickable')
   $('#display-message').html('game on')
@@ -12,25 +12,25 @@ const gameCreateSuccess = function (response) {
   $('#player-logged-on').html(`${store.user.email}`)
 //  $('#display-message').addClass('hidden')
 //  $('#gameBoard').show()
-  console.log(response)
+  // console.log(response)
   store.game = response
   store.game.game.newgame = true
 }
 const userGames = function (response) {
-  console.log('showing games')
-  console.log(response)
+  // console.log('showing games')
+  // console.log(response)
   store.games = response
   showgamesPlayed(store.games)
 }
 const userCompleteGames = function (response) {
-  console.log('showing games')
-  console.log(response)
+  // console.log('showing games')
+  // console.log(response)
   store.games = response
   showgamesPlayed(store.games)
 }
 const showGameBoards = function (games) {
   for (let i = 0; i < games.games.length; i++) {
-    console.log(games.games[i].cells)
+    // console.log(games.games[i].cells)
     $('#gameHistory').append(store.games.games[i].cells)
     $('#gameHistory').append(store.games.games[i].id)
     const result = pastGameBoard(store.games.games[i].cells)
@@ -59,8 +59,8 @@ const showGameBoards = function (games) {
 //   $('#p8').html(gamecells[8])
 // }
 const showgamesPlayed = function (data) {
-  console.log('in showgamesPlayed')
-  console.log(store.games.games.length)
+  // console.log('in showgamesPlayed')
+  // console.log(store.games.games.length)
   $('#Stats-message').html(`${store.user.email} played ${store.games.games.length} `)
 }
 const userGamesFail = function (response) {
@@ -183,7 +183,7 @@ const draw = function () {
 }
 const gameOver = function (winner) {
   $('#display-message').addClass('unhide')
-  $('#display-message').html(`${winner} Please start a new game`)
+  $('#display-message').html(`${winner}AF Please start a new game`)
 //  $('#display-message').html('GAME OVER!')
   $('#display-message').css('color', 'green')
   $('#gameBoard').addClass('unclickable')

@@ -16,8 +16,8 @@ const signInSuccess = function (response) {
   $('#sign-in-form').trigger('reset')
   // console.log('store before adding user key', store)
   store.user = response.user
-  console.log('store after adding user key', store)
-  console.log('store.user.token', store.user.token)
+  // console.log('store after adding user key', store)
+  // console.log('store.user.token', store.user.token)
   $('#sign-up-form').addClass('hidden')
   $('#sign-in-form').addClass('hidden')
   $('#Change-password-form').addClass('hidden')
@@ -55,16 +55,16 @@ const signOutFailure = function () {
   $('#sign-in-form').trigger('reset')
 }
 const createGamesuccess = function (response) {
-  console.log(response)
+//  console.log(response)
 }
 const userGames = function (response) {
-  console.log('in UI games')
+//  console.log('in UI games')
   store.games = response
-  console.log(response)
+//  console.log(response)
 }
 
 const changePasswordSuccess = function (response) {
-  console.log('new password success')
+//  console.log('new password success')
   // store.user = response.user
   $('#Change-password-form').addClass('hidden')
 }
