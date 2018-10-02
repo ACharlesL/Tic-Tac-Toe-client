@@ -5,7 +5,7 @@ const store = require('../store.js')
 
 const signUp = function (userData) {
   return $.ajax({
-    url: config.apiUrl + '/sign-up',
+    url: config.apiUrl + 'sign-up',
     method: 'POST',
     data: userData
   })
@@ -13,14 +13,14 @@ const signUp = function (userData) {
 const signIn = function (userData) {
   console.log('in sign in api')
   return $.ajax({
-    url: config.apiUrl + '/sign-in',
+    url: config.apiUrl + 'sign-in',
     method: 'POST',
     data: userData
   })
 }
 const changePassword = function (passwordData) {
   return $.ajax({
-    url: config.apiUrl + '/change-password',
+    url: config.apiUrl + 'change-password',
     headers: {
     // 'Content-type': 'application/json',
       Authorization: `Token token=${store.user.token}`
@@ -42,7 +42,7 @@ const changePassword = function (passwordData) {
 // }
 const signOut = function () {
   return $.ajax({
-    url: config.apiUrl + '/sign-out',
+    url: config.apiUrl + 'sign-out',
     headers: {
     // 'Content-type': 'application/json',
       Authorization: `Token token=${store.user.token}`
