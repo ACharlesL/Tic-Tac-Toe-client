@@ -30,7 +30,7 @@ const signInSuccess = function (response) {
   $('#Change-password-form').addClass('unhide')
   $('#player-logged-on').removeClass('hidden')
   $('#player-logged-on').html(`${store.user.email} logged in`)
-  console.log('sign in')
+  // console.log('sign in')
   // $('#gameBoard').addClass('unhide')
 
   // $('.gameBoard').addClass('hidden')
@@ -56,7 +56,7 @@ const signOutSuccess = function () {
   $('#Change-password-form').removeClass('unhide')
   $('#Stats-message').addClass('hidden')
   $('#player-logged-on').addClass('hidden')
-  console.log('sign out')
+  // console.log('sign out')
 }
 const signOutFailure = function () {
   $('#display-message').html('Something went wrong, please try again')
@@ -75,7 +75,7 @@ const userGames = function (response) {
 const changePasswordFailure = function () {
   $('#display-message').html('unable to change password')
   $('#display-message').css('color', 'red')
-  $('#sign-in-form').trigger('reset')
+  $('#Change-password-form').trigger('reset')
 }
 const changePasswordSuccess = function (response) {
 //  console.log('new password success')

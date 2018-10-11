@@ -65,7 +65,7 @@ const showgamesPlayed = function (data) {
   $('#Stats-message').removeClass('hidden')
 }
 const userGamesFail = function (response) {
-  console.log('user games fail')
+//  console.log('user games fail')
 }
 
 const gameCreatefailure = function () {
@@ -75,26 +75,32 @@ const gameCreatefailure = function () {
 }
 const gameXmove = function (data) {
   //  $(data).html('X')
-  $('#display-message').html('player made a move')
+  let playerUp
+  if (store.playSymbol === 'X') {
+    playerUp = 'O'
+  } else {
+    playerUp = 'X'
+  }
+  $('#display-message').html(`player ${playerUp} turn`)
   $('#display-message').css('color', 'yellow')
-  console.log('Asysnc: inside .then')
-  console.log(data)
+  // console.log('Asysnc: inside .then')
+  // console.log(data)
   // get content to the page:
-  console.log(data.game.id)
-  console.log(data.game.player_x.id)
-  console.log(data.game.cells)
+  // console.log(data.game.id)
+  // console.log(data.game.player_x.id)
+  // console.log(data.game.cells)
   updateboard(data)
   checkWin(data)
 }
 const gameXmovefail = function () {
   $('#display-message').html('Start a new game please!')
   $('#display-message').css('color', 'red')
-  console.log('game x move failed in event')
+  // console.log('game x move failed in event')
 }
 const wrongMove = function () {
   $('#display-message').html('wrong move')
   $('#display-message').css('color', 'red')
-  console.log('wrong move')
+  // console.log('wrong move')
 }
 
 const updateboard = function (data) {
@@ -107,10 +113,10 @@ const updateboard = function (data) {
   $('#6').html(data.game.cells[6])
   $('#7').html(data.game.cells[7])
   $('#8').html(data.game.cells[8])
-  console.log('in updateboard UI' + data.game.cells)
+  // console.log('in updateboard UI' + data.game.cells)
 }
 const checkWin = function (data) {
-  console.log('game board in win ' + data.game.cells)
+  // console.log('game board in win ' + data.game.cells)
   // generate arrays to check
   // row
   const game = data.game.cells
@@ -164,28 +170,28 @@ const checkWin = function (data) {
 
 const winX = function () {
   store.game.game.over = true
-  $('#display-message').html('X WIN! Please start a new game')
+  $('#display-message').html('X WIN! start a new game')
   $('#display-message').css('color', 'green')
-  console.log('Player X WIN')
+  // console.log('Player X WIN')
   gameOver('X wins!')
 }
 const winO = function () {
   store.game.game.over = true
-  $('#display-message').html('O WIN! Please start a new game')
+  $('#display-message').html('O WIN! start a new game')
   $('#display-message').css('color', 'green')
-  console.log('Player O WIN')
+  // console.log('Player O WIN')
   gameOver('O wins!')
 }
 const draw = function () {
   store.game.game.over = true
   $('#display-message').html('DRAW!')
   $('#display-message').css('color', 'yellow')
-  console.log('DRAW!')
+  // console.log('DRAW!')
   gameOver('DRAW!')
 }
 const gameOver = function (winner) {
   $('#display-message').addClass('unhide')
-  $('#display-message').html(`${winner} Please start a new game`)
+  $('#display-message').html(`${winner} start a new game`)
   //  $('#display-message').html('GAME OVER!')
   $('#display-message').css('color', 'green')
   $('#gameBoard').addClass('unclickable')

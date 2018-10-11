@@ -46,8 +46,8 @@ const onNewGame = function (event) {
 // not sure this funciton is usefull.
 // const gameStatus = function (event) {
 //   if (unavialableSpot.length < 10 && unavialableSpot.length === 9) {
-//     //  store.game.game.over = true
-//     //  console.log('GAME OVER')
+// store.game.game.over = true
+// console.log('GAME OVER')
 //   } else if (unavialableSpot.length < 10) {
 //     makingMoves(event)
 //   }
@@ -70,24 +70,23 @@ const gamelogic = function (event) {
       const OVER = store.game.game.over
       const X = 'X'
       const O = 'O'
-      let value
       // if (eventCounter === 0) {
       //   value = X
       // }
       // console.log('event tracker ' + eventCounter)
       if (eventCounter % 2 === 0) {
         if (eventCounter === 0) {
-          value = X
+          store.playSymbol = X
         }
-        value = O
+        store.playSymbol = O
       } else {
-        value = X
+        store.playSymbol = X
       }
       const currentGame = {
         'game': {
           'cell': {
             'index': changeLocation,
-            'value': value
+            'value': store.playSymbol
           },
           'over': OVER
         }

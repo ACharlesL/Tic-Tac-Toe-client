@@ -19,7 +19,7 @@ const signIn = function (userData) {
   })
 }
 const changePassword = function (passwordData) {
-  console.log('change pass data ' + passwordData)
+  // console.log('change pass data ' + passwordData)
   return $.ajax({
     url: config.apiUrl + 'change-password',
     headers: {
