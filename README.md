@@ -14,12 +14,12 @@ This module requires the following:
 
 ## Technologies used
 
-⋅⋅* html
-⋅⋅* css
-⋅⋅* javascript
-⋅⋅* jquery
-⋅⋅* ajax
-⋅⋅* sass
+* html
+* css
+* javascript
+* jquery
+* ajax
+* sass
 
 ## Document your planning and tell a story about your development process and problem-solving strategy.
 
