@@ -9,9 +9,9 @@ const gameCreateSuccess = function (response) {
   $('#gameBoard').addClass('clickable')
   $('#display-message').html('game on')
   $('#display-message').css('color', 'green')
-  $('#player-logged-on').html(`${store.user.email}`)
-//  $('#display-message').addClass('hidden')
-//  $('#gameBoard').show()
+  // $('#player-logged-on').html(`${store.user.email}`)
+  // $('#display-message').addClass('hidden')
+  // $('#gameBoard').show()
   // console.log(response)
   store.game = response
   store.game.game.newgame = true
@@ -160,6 +160,7 @@ const checkWin = function (data) {
     draw()
   }
 }
+
 const winX = function () {
   store.game.game.over = true
   $('#display-message').html('X WIN! Please start a new game')
@@ -184,7 +185,7 @@ const draw = function () {
 const gameOver = function (winner) {
   $('#display-message').addClass('unhide')
   $('#display-message').html(`${winner} Please start a new game`)
-//  $('#display-message').html('GAME OVER!')
+  //  $('#display-message').html('GAME OVER!')
   $('#display-message').css('color', 'green')
   $('#gameBoard').addClass('unclickable')
 }

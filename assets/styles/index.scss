@@ -42,11 +42,28 @@ $gray: #6c757d;
     margin: 0;
 
 }
+.container .box {
+  font-size: xx-large;
+  text-align: justify;
+}
+.container .box:hover{
+  background: $brightOrange;
+  color: #fff;
+  cursor: pointer;
+  font-size: xx-large;
+  /*Opacity*/
+  zoom: 1;
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
 
 body {
   background-color: $kesselrun1;
 }
 
+#gameBoard {
+
+}
 .box {
   align-items: center;
   border: 5px solid gray;
@@ -57,9 +74,6 @@ body {
   justify-content: center;
 }
 
-#gameBoard {
-  margin: auto;
-}
 
 .hover {
   background-color: $brightOrange;

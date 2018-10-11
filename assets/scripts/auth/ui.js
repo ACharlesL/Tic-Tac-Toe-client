@@ -4,6 +4,8 @@ const store = require('../store.js')
 
 const signUpSuccess = function () {
   $('#display-message').html('Sign up successful')
+  $('#display-message').css('color', 'green')
+  $('#sign-up-form').trigger('reset')
 }
 const signUpFailure = function () {
   $('#display-message').html('Something went wrong, please try again')
@@ -26,11 +28,17 @@ const signInSuccess = function (response) {
   $('#sign-out-button').addClass('unhide')
   $('#view-games-button').addClass('unhide')
   $('#Change-password-form').addClass('unhide')
+  $('#player-logged-on').addClass('unhide')
+  $('#player-logged-on').html(`${store.user.email} logged in`)
+  $('#Stats-message').removeClass('unhide')
+  console.log('sign in')
+  // $('#gameBoard').addClass('unhide')
 
   // $('.gameBoard').addClass('hidden')
 }
 const signInFailure = function () {
-  $('#display-message').htm('Something went wrong, please try again')
+  // missing the l in html
+  $('#display-message').html('Something went wrong, please try again')
   $('#display-message').css('color', 'red')
   $('#sign-in-form').trigger('reset')
 }
@@ -41,13 +49,15 @@ const signOutSuccess = function () {
   $('#sign-in-form').removeClass('hidden')
   $('#Change-password-form').addClass('hidden')
   $('#sign-out-button').addClass('hidden')
-  $('#gameBoard').hide()
-  $('#new-game-button').hide()
-  $('#sign-out-button').hide()
-  $('#view-games-button').hide()
-  $('#Change-password-form').hide()
-  $('#player-logged-on').hide()
-
+  $('#gameBoard').removeClass('unhide')
+  // $('#new-game-button').hide()
+  $('#new-game-button').removeClass('unhide')
+  $('#sign-out-button').removeClass('unhide')
+  $('#view-games-button').removeClass('unhide')
+  $('#Change-password-form').removeClass('unhide')
+  $('#Stats-message').addClass('unhide')
+  $('#player-logged-on').removeClass('unhide')
+  console.log('sign out')
 }
 const signOutFailure = function () {
   $('#display-message').html('Something went wrong, please try again')
@@ -63,10 +73,18 @@ const userGames = function (response) {
 //  console.log(response)
 }
 
+const changePasswordFailure = function () {
+  $('#display-message').html('unable to change password')
+  $('#display-message').css('color', 'red')
+  $('#sign-in-form').trigger('reset')
+}
 const changePasswordSuccess = function (response) {
 //  console.log('new password success')
   // store.user = response.user
   $('#Change-password-form').addClass('hidden')
+  $('#display-message').html('Password changed')
+  $('#display-message').css('color', 'green')
+  $('#Change-password-form').trigger('reset')
 }
 module.exports = {
   signUpSuccess,
@@ -77,5 +95,6 @@ module.exports = {
   signOutFailure,
   createGamesuccess,
   userGames,
-  changePasswordSuccess
+  changePasswordSuccess,
+  changePasswordFailure
 }

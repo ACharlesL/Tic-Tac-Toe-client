@@ -107,7 +107,7 @@ const gamelogic = function (event) {
     ui.gameXmovefail()
   }
 }
-const makingMoves = function(event) {
+const makingMoves = function (event) {
   if (!unavialableSpot.includes(event.target.id)) {
     event.preventDefault()
     store.event = event

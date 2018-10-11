@@ -15,11 +15,11 @@ const onSignUp = function (event) {
 }
 const onChangePassword = function (event) {
   event.preventDefault()
+  console.log('change password ran')
   const data = getFormFields(event.target)
-  //  console.log(data)
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
-    .catch(ui.signInFailure)
+    .catch(ui.changePasswordFailure)
 }
 const onSignIn = function (event) {
   // alert('it works')
