@@ -28,9 +28,8 @@ const signInSuccess = function (response) {
   $('#sign-out-button').addClass('unhide')
   $('#view-games-button').addClass('unhide')
   $('#Change-password-form').addClass('unhide')
-  $('#player-logged-on').addClass('unhide')
+  $('#player-logged-on').removeClass('hidden')
   $('#player-logged-on').html(`${store.user.email} logged in`)
-  $('#Stats-message').removeClass('unhide')
   console.log('sign in')
   // $('#gameBoard').addClass('unhide')
 
@@ -55,8 +54,8 @@ const signOutSuccess = function () {
   $('#sign-out-button').removeClass('unhide')
   $('#view-games-button').removeClass('unhide')
   $('#Change-password-form').removeClass('unhide')
-  $('#Stats-message').addClass('unhide')
-  $('#player-logged-on').removeClass('unhide')
+  $('#Stats-message').addClass('hidden')
+  $('#player-logged-on').addClass('hidden')
   console.log('sign out')
 }
 const signOutFailure = function () {

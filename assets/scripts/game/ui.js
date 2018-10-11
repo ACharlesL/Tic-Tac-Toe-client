@@ -62,6 +62,7 @@ const showgamesPlayed = function (data) {
   // console.log('in showgamesPlayed')
   // console.log(store.games.games.length)
   $('#Stats-message').html(`${store.user.email} played ${store.games.games.length} `)
+  $('#Stats-message').removeClass('hidden')
 }
 const userGamesFail = function (response) {
   console.log('user games fail')
