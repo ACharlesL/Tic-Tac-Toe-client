@@ -6,9 +6,9 @@ This is a single page application. A single player Tic Tac Toe game. current sta
 ## Requirements
 
 This module requires the following:
--A user must signup with a unique email address to setup a player account.
--A user must sign-in to play a game.
--After signin the user must click new game button to start a new game.
+  - A user must signup with a unique email address to setup a player account.
+  - A user must sign-in to play a game.
+  - After signin the user must click new game button to start a new game.
 
 
 
