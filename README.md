@@ -21,7 +21,7 @@ This module requires the following:
 * ajax
 * sass
 
-## Plan and development process
+## Plan and Development process
 
 My process in developing this application has been mostly test driven. I made it a habit to test almost every line of code I wrote including console loging all result during development.
 
@@ -30,7 +30,7 @@ My approach was to start working on the back-end in order to understand the resp
 After developing curl-scripts to verify access to the servers I started working on developing the Ajax calls accordingly. I decided to work on the front-end by developing bearbone html with various elements which will be used to pass data and events with proper routing to the respective api calls. My api calls are being made by utilizing Ajax calls which trigger different messages/actions depending on success/failure of the api call through Ajax. After a completely connected from the front end to the servers were made, I then focused on the game logic.
 
 
-## List unsolved problems which would be fixed in future iterations.
+## Unsolved Problems
 
   - In future iterations I will add a multiplayer functionality for (user vs user) and (user vs AI).
   - A responsive user interface and better UI/UX.
@@ -38,7 +38,7 @@ After developing curl-scripts to verify access to the servers I started working 
 ## Wireframe
 [Imgur](https://i.imgur.com/fvJ5CFE.jpg?1)
 
-## User stories.
+## User Stories.
 * As a non credential user I should be able to sign up with email and password.
 * As a credential user is should be able to log i.
 * As a credential user I should be able change my password once logged in.
