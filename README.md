@@ -21,7 +21,7 @@ This module requires the following:
 * ajax
 * sass
 
-## Document your planning and tell a story about your development process and problem-solving strategy.
+## Plan and development process
 
 My process in developing this application has been mostly test driven. I made it a habit to test almost every line of code I wrote including console loging all result during development.
 
