@@ -35,4 +35,15 @@ After developing curl-scripts to verify access to the servers I started working 
   - In future iterations I will add a multiplayer functionality for (user vs user) and (user vs AI).
   - A responsive user interface and better UI/UX.
 
-## Link to wireframes and user stories.
+## Wireframe
+[Imgur](https://i.imgur.com/fvJ5CFE.jpg?1)
+
+## User stories.
+* As a non credential user I should be able to sign up with email and password.
+* As a credential user is should be able to log i.
+* As a credential user I should be able change my password once logged in.
+* As a credential user/player I should be able to see number of game ive played.
+* As a Player I want to select 'X' or 'O' before stating the game.
+* As a player I want to start a new Game
+* As a player I want to be able to quit a Game
+* As a player I should be able to check my score history
